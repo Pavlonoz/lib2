@@ -479,7 +479,7 @@ do
             if window.currentContent.dropdown and window.currentContent.dropdown.open then
                 local dropdown = window.currentContent.dropdown
                 dropdown.open = not dropdown.open
-                utility:LoadImage(dropdown.dropdown_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
+
                 --
                 for i,v in pairs(dropdown.holder.drawings) do
                     utility:Remove(v)
@@ -494,7 +494,7 @@ do
             elseif window.currentContent.multibox and window.currentContent.multibox.open then
                 local multibox = window.currentContent.multibox
                 multibox.open = not multibox.open
-                utility:LoadImage(multibox.multibox_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
+
                 --
                 for i,v in pairs(multibox.holder.drawings) do
                     utility:Remove(v)
@@ -1409,7 +1409,7 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(toggle__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+      
         --
         function toggle:Get()
             return toggle.current
@@ -1492,9 +1492,9 @@ do
             }, section.visibleContent)
             --
             if transp then
-                utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
+
             end
-            utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
@@ -1730,13 +1730,13 @@ do
                                     Color = Color3.fromHSV(0, 0, 1 - colorpicker.current[4]),
                                 }, colorpicker.holder.drawings);colorpicker.holder.transparency_cursor[3] = colorpicker_open_transparency_cursor_color
                                 --
-                                utility:LoadImage(colorpicker_open_transparency_image, "transp", "https://i.imgur.com/ncssKbH.png")
-                                --utility:LoadImage(colorpicker_open_transparency_image, "transp", "https://i.imgur.com/VcMAYjL.png")
+
+
                             end
                             --
-                            utility:LoadImage(colorpicker_open_picker_image, "valsat", "https://i.imgur.com/wpDRqVH.png")
+
                             utility:LoadImage(colorpicker_open_picker_cursor, "valsat_cursor", "https://raw.githubusercontent.com/mvonwalk/splix-assets/main/Images-cursor.png")
-                            utility:LoadImage(colorpicker_open_huepicker_image, "hue", "https://i.imgur.com/iEOsHFv.png")
+
                             --
                             window.currentContent.frame = colorpicker_open_inline
                             window.currentContent.colorpicker = colorpicker
@@ -1883,7 +1883,7 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
             --
             function keybind:Shorten(string)
                 for i,v in pairs(shortenedInputs) do
@@ -2039,7 +2039,7 @@ do
                             Visible = page.open
                         }, keybind.modemenu.drawings)
                         --
-                        utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
                         --
                         for i,v in pairs({"Always", "Toggle", "Hold"}) do
                             local button_title = utility:Create("TextLabel", {Vector2.new(modemenu_frame.Size.X/2,15 * (i-1)), modemenu_frame}, {
@@ -2161,7 +2161,7 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(slider__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
         --
         function slider:Set(value)
             slider.current = math.clamp(math.round(value * slider.decimals) / slider.decimals, slider.min, slider.max)
@@ -2265,7 +2265,7 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
         --
         library.began[#library.began + 1] = function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and utility:MouseOverDrawing({section.section_frame.Position.X, section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X, section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
@@ -2335,7 +2335,7 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
             --
             library.began[#library.began + 1] = function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and utility:MouseOverDrawing({section.section_frame.Position.X + (i == 2 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X - (i == 1 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
@@ -2416,8 +2416,7 @@ do
             Visible = page.open
         }, section.visibleContent);dropdown["dropdown_image"] = dropdown_image
         --
-        utility:LoadImage(dropdown_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        utility:LoadImage(dropdown__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
         --
         function dropdown:Update()
             if dropdown.open and dropdown.holder.inline then
@@ -2454,7 +2453,7 @@ do
                     if not dropdown.open then
                         window:CloseContent()
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "arrow_up", "https://i.imgur.com/SL9cbQp.png")
+
                         --
                         local dropdown_open_outline = utility:Create("Frame", {Vector2.new(0,19), dropdown_outline}, {
                             Size = utility:Size(1, 0, 0, 3 + (#options * 19), dropdown_outline),
@@ -2484,8 +2483,7 @@ do
                                 Transparency = 0.5,
                                 Visible = page.open
                             }, dropdown.holder.drawings)
-                            --
-                            utility:LoadImage(dropdown_value_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")]]
+                            --]]
                             --
                             local dropdown_value = utility:Create("TextLabel", {Vector2.new(v == tostring(dropdown.current) and 8 or 6,2), dropdown_value_frame}, {
                                 Text = v,
@@ -2502,7 +2500,7 @@ do
                         window.currentContent.dropdown = dropdown
                     else
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
+
                         --
                         for i,v in pairs(dropdown.holder.drawings) do
                             utility:Remove(v)
@@ -2518,7 +2516,7 @@ do
                 else
                     if dropdown.open then
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
+
                         --
                         for i,v in pairs(dropdown.holder.drawings) do
                             utility:Remove(v)
@@ -2534,7 +2532,7 @@ do
                 end
             elseif Input.UserInputType == Enum.UserInputType.MouseButton1 and dropdown.open then
                 dropdown.open = not dropdown.open
-                utility:LoadImage(dropdown_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
+
                 --
                 for i,v in pairs(dropdown.holder.drawings) do
                     utility:Remove(v)
@@ -2628,8 +2626,7 @@ do
             Visible = page.open
         }, section.visibleContent);multibox["multibox_image"] = multibox_image
         --
-        utility:LoadImage(multibox_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        utility:LoadImage(multibox__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
         --
         function multibox:Update()
             if multibox.open and multibox.holder.inline then
@@ -2698,7 +2695,7 @@ do
                     if not multibox.open then
                         window:CloseContent()
                         multibox.open = not multibox.open
-                        utility:LoadImage(multibox_image, "arrow_up", "https://i.imgur.com/SL9cbQp.png")
+
                         --
                         local multibox_open_outline = utility:Create("Frame", {Vector2.new(0,19), multibox_outline}, {
                             Size = utility:Size(1, 0, 0, 3 + (#options * 19), multibox_outline),
@@ -2729,7 +2726,7 @@ do
                                 Visible = page.open
                             }, multibox.holder.drawings)
                             --
-                            utility:LoadImage(multibox_value_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")]]
+]]
                             --
                             local multibox_value = utility:Create("TextLabel", {Vector2.new(table.find(multibox.current, v) and 8 or 6,2), multibox_value_frame}, {
                                 Text = v,
@@ -2746,7 +2743,7 @@ do
                         window.currentContent.multibox = multibox
                     else
                         multibox.open = not multibox.open
-                        utility:LoadImage(multibox_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
+
                         --
                         for i,v in pairs(multibox.holder.drawings) do
                             utility:Remove(v)
@@ -2762,7 +2759,7 @@ do
                 else
                     if multibox.open then
                         multibox.open = not multibox.open
-                        utility:LoadImage(multibox_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
+
                         --
                         for i,v in pairs(multibox.holder.drawings) do
                             utility:Remove(v)
@@ -2778,7 +2775,7 @@ do
                 end
             elseif Input.UserInputType == Enum.UserInputType.MouseButton1 and multibox.open then
                 multibox.open = not multibox.open
-                utility:LoadImage(multibox_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
+
                 --
                 for i,v in pairs(multibox.holder.drawings) do
                     utility:Remove(v)
@@ -2871,7 +2868,7 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
         --
         function keybind:Shorten(string)
             for i,v in pairs(shortenedInputs) do
@@ -3021,7 +3018,7 @@ do
                         Visible = page.open
                     }, keybind.modemenu.drawings)
                     --
-                    utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
                     --
                     for i,v in pairs({"Always", "Toggle", "Hold"}) do
                         local button_title = utility:Create("TextLabel", {Vector2.new(modemenu_frame.Size.X/2,15 * (i-1)), modemenu_frame}, {
@@ -3129,9 +3126,9 @@ do
         }, section.visibleContent)
         --
         if transp then
-            utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
+
         end
-        utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
         --
         function colorpicker:Set(color, transp_val)
             if typeof(color) == "table" then
@@ -3359,13 +3356,13 @@ do
                                 Color = Color3.fromHSV(0, 0, 1 - colorpicker.current[4]),
                             }, colorpicker.holder.drawings);colorpicker.holder.transparency_cursor[3] = colorpicker_open_transparency_cursor_color
                             --
-                            utility:LoadImage(colorpicker_open_transparency_image, "transp", "https://i.imgur.com/ncssKbH.png")
-                            --utility:LoadImage(colorpicker_open_transparency_image, "transp", "https://i.imgur.com/VcMAYjL.png")
+
+
                         end
                         --
-                        utility:LoadImage(colorpicker_open_picker_image, "valsat", "https://i.imgur.com/wpDRqVH.png")
+
                         utility:LoadImage(colorpicker_open_picker_cursor, "valsat_cursor", "https://raw.githubusercontent.com/mvonwalk/splix-assets/main/Images-cursor.png")
-                        utility:LoadImage(colorpicker_open_huepicker_image, "hue", "https://i.imgur.com/iEOsHFv.png")
+
                         --
                         window.currentContent.frame = colorpicker_open_inline
                         window.currentContent.colorpicker = colorpicker
@@ -3506,9 +3503,9 @@ do
             }, section.visibleContent)
             --
             if transp then
-                utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
+
             end
-            utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
@@ -3736,13 +3733,13 @@ do
                                     Color = Color3.fromHSV(0, 0, 1 - colorpicker.current[4]),
                                 }, colorpicker.holder.drawings);colorpicker.holder.transparency_cursor[3] = colorpicker_open_transparency_cursor_color
                                 --
-                                utility:LoadImage(colorpicker_open_transparency_image, "transp", "https://i.imgur.com/ncssKbH.png")
-                                --utility:LoadImage(colorpicker_open_transparency_image, "transp", "https://i.imgur.com/VcMAYjL.png")
+
+
                             end
                             --
-                            utility:LoadImage(colorpicker_open_picker_image, "valsat", "https://i.imgur.com/wpDRqVH.png")
+
                             utility:LoadImage(colorpicker_open_picker_cursor, "valsat_cursor", "https://raw.githubusercontent.com/mvonwalk/splix-assets/main/Images-cursor.png")
-                            utility:LoadImage(colorpicker_open_huepicker_image, "hue", "https://i.imgur.com/iEOsHFv.png")
+
                             --
                             window.currentContent.frame = colorpicker_open_inline
                             window.currentContent.colorpicker = colorpicker
@@ -3883,7 +3880,7 @@ do
             configLoader.buttons[i] = config_title
         end
         --
-        utility:LoadImage(configLoader_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+
         --
         function configLoader:Refresh()
             for i,v in pairs(configLoader.buttons) do
