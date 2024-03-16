@@ -19,9 +19,9 @@ local library = {
     ended = {},
     changed = {},
     folders = {
-        main = "splix",
-        assets = "splix/assets",
-        configs = "splix/configs"
+        main = "pavehub",
+        assets = "pavehub/assets",
+        configs = "pavehub/configs"
     },
     shared = {
         initialized = false,
@@ -48,14 +48,14 @@ local sections = {}
 -- Theme Variables
 --local themes = {}
 local theme = {
-    accent = Color3.fromRGB(50, 100, 255),
+    accent = Color3.fromRGB(255, 89, 0),
     light_contrast = Color3.fromRGB(30, 30, 30),
     dark_contrast = Color3.fromRGB(20, 20, 20),
-    outline = Color3.fromRGB(0, 0, 0),
+    outline = Color3.fromRGB(255, 89, 0),
     inline = Color3.fromRGB(50, 50, 50),
-    textcolor = Color3.fromRGB(255, 255, 255),
+    textcolor = Color3.fromRGB(255, 89, 0),
     textborder = Color3.fromRGB(0, 0, 0),
-    cursoroutline = Color3.fromRGB(10, 10, 10),
+    cursoroutline = Color3.fromRGB(255, 89, 0),
     font = 2,
     textsize = 13
 }
@@ -124,8 +124,8 @@ do
         elseif instanceType == "Triangle" or instanceType == "triangle" then
             local frame = Drawing.new("Triangle")
             frame.Visible = true
-            frame.Filled = false
-            frame.Thickness = 2
+            frame.Filled = true
+            frame.Thickness = 0
             frame.Color = Color3.fromRGB(255,255,255)
             frame.ZIndex = 50
             frame.Transparency = library.shared.initialized and 1 or 0
@@ -896,7 +896,7 @@ do
             --
             local cursor_inline = utility:Create("Triangle", nil, {
                 Color = theme.accent,
-                Filled = false,
+                Filled = true,
                 Thickness = 0,
                 ZIndex = 65,
                 Hidden = true
